@@ -22,7 +22,7 @@ client.on('message', message => {
 
 });
 
- 
+ bot.user.setPresence({ status: 'online', game: { name: 'DBU' } })
 
 // THIS  MUST  BE  THIS  WAY
 
