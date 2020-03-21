@@ -22,7 +22,7 @@ client.on('message', message => {
 
 });
 
-client.user.setGame('DBU')
+bot.user.setActivity("Type !help");
 
 // THIS  MUST  BE  THIS  WAY
 
