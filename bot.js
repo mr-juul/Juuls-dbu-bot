@@ -22,7 +22,6 @@ client.on('message', message => {
 
 });
 
-bot.user.setActivity("Type !help");
 
 // THIS  MUST  BE  THIS  WAY
 
@@ -38,3 +37,4 @@ client.on('message', msg => {
     msg.reply('Ja?');
   }
 });
+bot.user.setActivity("Type !help");
