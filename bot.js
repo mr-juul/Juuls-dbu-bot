@@ -33,3 +33,8 @@ client.on('message', msg => {
     msg.reply('Test ok!');
   }
 });
+client.on('message', msg => {
+  if (msg.content === '!DBU') {
+    msg.reply('Ja?');
+  }
+});
