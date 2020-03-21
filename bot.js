@@ -2,38 +2,24 @@ const Discord = require('discord.js');
 
 const client = new Discord.Client();
 
- 
+const fs = require('fs');
+const Discord = require('discord.js');
+const { prefix, token } = require('./config.json');
 
-client.on('ready', () => {
+const client = new Discord.Client();
+client.commands = new Discord.Collection();
 
-    console.log('I am ready!');
+const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 
-});
+for (const file of commandFiles) {
+	const command = require(`./commands/${file}`);
+	client.commands.set(command.name, command);
+}
 
- 
+// `client.on('...')` events and such below this point
+const Discord = require('discord.js');
 
-client.on('message', message => {
-
-    if (message.content === 'ping') {
-
-       message.reply('pong');
-
-       }
-
-});
-
-
-// THIS  MUST  BE  THIS  WAY
+const client = new Discord.Client();
 
 client.login(process.env.BOT_TOKEN);//BOT_TOKEN is the Client Secret
 
-client.on('message', msg => {
-  if (msg.content === '!test') {
-    msg.reply('Test ok!');
-  }
-});
-client.on('message', msg => {
-  if (msg.content === '!DBU') {
-    msg.reply('Ja?');
-  }
-});
